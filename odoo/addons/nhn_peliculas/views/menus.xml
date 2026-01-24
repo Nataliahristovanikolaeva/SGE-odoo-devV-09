@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+  
+        <menuitem id="menu_nhn_peliculas_root" 
+                  name="Cine" 
+                  sequence="10"/>
+        
+    
+        <menuitem id="menu_nhn_peliculas_peliculas" 
+                  name="Películas" 
+                  parent="menu_nhn_peliculas_root" 
+                  sequence="10"
+                  action="action_nhn_peliculas_pelicula"/>
+        
+        <menuitem id="menu_nhn_peliculas_actores" 
+                  name="Actores" 
+                  parent="menu_nhn_peliculas_root" 
+                  sequence="20"
+                  action="action_nhn_peliculas_actor"/>
+        
+        <menuitem id="menu_nhn_peliculas_directores" 
+                  name="Directores" 
+                  parent="menu_nhn_peliculas_root" 
+                  sequence="30"
+                  action="action_nhn_peliculas_director"/>
+        
+        <menuitem id="menu_nhn_peliculas_generos" 
+                  name="Géneros" 
+                  parent="menu_nhn_peliculas_root" 
+                  sequence="40"
+                  action="action_nhn_peliculas_genero"/>
+    </data>
+</odoo>

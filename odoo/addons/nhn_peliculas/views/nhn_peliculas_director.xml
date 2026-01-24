@@ -1,34 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <data>
-    <record id="model_name_view_tree" model="ir.ui.view">
-        <field name="name">model_name.view.tree</field>
-        <field name="model">model_name</field>
-        <field name="arch" type="xml">
-            <tree string="">
-                
-            </tree>
-        </field>
-
-        <record id="model_name_view_form" model="ir.ui.view">
-            <field name="name">model_name.view.form</field>
-            <field name="model">model_name</field>
+    
+        <record id="view_nhn_peliculas_director_tree" model="ir.ui.view">
+            <field name="name">nhn.peliculas.director.tree</field>
+            <field name="model">nhn_peliculas.director</field>
             <field name="arch" type="xml">
-                <form string="">
+                <tree string="Directores">
+                    <field name="name"/>
+                    <field name="fecha_nacimiento"/>
+                    <field name="nacionalidad"/>
+                </tree>
+            </field>
+        </record>
+        
+      
+        <record id="view_nhn_peliculas_director_form" model="ir.ui.view">
+            <field name="name">nhn.peliculas.director.form</field>
+            <field name="model">nhn_peliculas.director</field>
+            <field name="arch" type="xml">
+                <form string="Director">
                     <sheet>
                         <group>
-                            
+                            <group>
+                                <field name="name"/>
+                                <field name="fecha_nacimiento"/>
+                                <field name="nacionalidad"/>
+                            </group>
                         </group>
+                        <group>
+                            <field name="premios" nolabel="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Películas">
+                                <field name="peliculas_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="anio"/>
+                                        <field name="duracion"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
         </record>
-    </record>
-    
         
-    
+       
+        <record id="action_nhn_peliculas_director" model="ir.actions.act_window">
+            <field name="name">Directores</field>
+            <field name="res_model">nhn_peliculas.director</field>
+            <field name="view_mode">tree,form</field>
+        </record>
     </data>
-    
-
 </odoo>

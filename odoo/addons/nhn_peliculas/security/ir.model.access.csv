@@ -1,9 +1,9 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-nhn_peliculas_genero_user,nhn_peliculas.genero.user,model_nhn_peliculas_genero,base.group_user,1,0,0,0
-nhn_peliculas_genero_admin,nhn_peliculas.genero.admin,model_nhn_peliculas_genero,base.group_system,1,1,1,1
-nhn_peliculas_director_user,nhn_peliculas.director.user,model_nhn_peliculas_director,base.group_user,1,0,0,0
-nhn_peliculas_director_admin,nhn_peliculas.director.admin,model_nhn_peliculas_director,base.group_system,1,1,1,1
-nhn_peliculas_actor_user,nhn_peliculas.actor.user,model_nhn_peliculas_actor,base.group_user,1,0,0,0
-nhn_peliculas_actor_admin,nhn_peliculas.actor.admin,model_nhn_peliculas_actor,base.group_system,1,1,1,1
-nhn_peliculas_pelicula_user,nhn_peliculas.pelicula.user,model_nhn_peliculas_pelicula,base.group_user,1,1,1,0
-nhn_peliculas_pelicula_admin,nhn_peliculas.pelicula.admin,model_nhn_peliculas_pelicula,base.group_system,1,1,1,1
+access_nhn_peliculas_actor_user,nhn_peliculas.actor.user,model_nhn_peliculas_actor,base.group_user,1,1,1,0
+access_nhn_peliculas_actor_admin,nhn_peliculas.actor.admin,model_nhn_peliculas_actor,base.group_system,1,1,1,1
+access_nhn_peliculas_director_user,nhn_peliculas.director.user,model_nhn_peliculas_director,base.group_user,1,1,1,0
+access_nhn_peliculas_director_admin,nhn_peliculas.director.admin,model_nhn_peliculas_director,base.group_system,1,1,1,1
+access_nhn_peliculas_genero_user,nhn_peliculas.genero.user,model_nhn_peliculas_genero,base.group_user,1,1,1,0
+access_nhn_peliculas_genero_admin,nhn_peliculas.genero.admin,model_nhn_peliculas_genero,base.group_system,1,1,1,1
+access_nhn_peliculas_pelicula_user,nhn_peliculas.pelicula.user,model_nhn_peliculas_pelicula,base.group_user,1,1,1,0
+access_nhn_peliculas_pelicula_admin,nhn_peliculas.pelicula.admin,model_nhn_peliculas_pelicula,base.group_system,1,1,1,1

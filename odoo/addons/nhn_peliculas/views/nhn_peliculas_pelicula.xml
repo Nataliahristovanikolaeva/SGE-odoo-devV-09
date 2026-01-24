@@ -1,34 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <data>
-    <record id="model_name_view_tree" model="ir.ui.view">
-        <field name="name">model_name.view.tree</field>
-        <field name="model">model_name</field>
-        <field name="arch" type="xml">
-            <tree string="">
-                
-            </tree>
-        </field>
-
-        <record id="model_name_view_form" model="ir.ui.view">
-            <field name="name">model_name.view.form</field>
-            <field name="model">model_name</field>
+     
+        <record id="view_nhn_peliculas_pelicula_tree" model="ir.ui.view">
+            <field name="name">nhn.peliculas.pelicula.tree</field>
+            <field name="model">nhn_peliculas.pelicula</field>
             <field name="arch" type="xml">
-                <form string="">
+                <tree string="Películas">
+                    <field name="name"/>
+                    <field name="director_id"/>
+                    <field name="anio"/>
+                    <field name="duracion"/>
+                </tree>
+            </field>
+        </record>
+        
+       
+        <record id="view_nhn_peliculas_pelicula_form" model="ir.ui.view">
+            <field name="name">nhn.peliculas.pelicula.form</field>
+            <field name="model">nhn_peliculas.pelicula</field>
+            <field name="arch" type="xml">
+                <form string="Película">
                     <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" class="oe_inline"/>
+                                <span class="oe_inline">(<field name="anio"/>)</span>
+                            </h1>
+                        </div>
                         <group>
-                            
+                            <group>
+                                <field name="director_id"/>
+                                <field name="duracion" string="Duración (minutos)"/>
+                                <field name="imagen" widget="image" class="oe_avatar" options="{'preview_image': 'image_1024'}"/>
+                            </group>
                         </group>
+                        <group>
+                            <field name="sinopsis" nolabel="1" placeholder="Sinopsis de la película..." style="height: 100px;"/>
+                        </group>
+                        <notebook>
+                            <page string="Actores">
+                                <field name="actores_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="fecha_nacimiento"/>
+                                        <field name="nacionalidad"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Géneros">
+                                <field name="generos_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="descripcion"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
         </record>
-    </record>
-    
         
-    
+       
+        <record id="action_nhn_peliculas_pelicula" model="ir.actions.act_window">
+            <field name="name">Películas</field>
+            <field name="res_model">nhn_peliculas.pelicula</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Añade tu primera película
+                </p>
+            </field>
+        </record>
     </data>
-    
-
 </odoo>

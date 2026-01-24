@@ -1,30 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-<!--
-          <record id="object0" model="nhn_peliculas.nhn_peliculas">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
-          </record>
-
-          <record id="object1" model="nhn_peliculas.nhn_peliculas">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
-          </record>
-
-          <record id="object2" model="nhn_peliculas.nhn_peliculas">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
-          </record>
-
-          <record id="object3" model="nhn_peliculas.nhn_peliculas">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
-          </record>
-
-          <record id="object4" model="nhn_peliculas.nhn_peliculas">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
-          </record>
--->
+    <data noupdate="1">
+        
+        <record id="genero_accion" model="nhn_peliculas.genero">
+            <field name="name">Acción</field>
+            <field name="descripcion">Películas con escenas de acción intensa</field>
+        </record>
+        
+        <record id="genero_drama" model="nhn_peliculas.genero">
+            <field name="name">Drama</field>
+            <field name="descripcion">Películas dramáticas con contenido emocional</field>
+        </record>
+        
+        
+        <record id="actor_leonardo" model="nhn_peliculas.actor">
+            <field name="name">Leonardo DiCaprio</field>
+            <field name="fecha_nacimiento">1974-11-11</field>
+            <field name="nacionalidad">Estadounidense</field>
+            <field name="biografia">Actor estadounidense ganador del Oscar</field>
+        </record>
+        
+       
+        <record id="director_nolan" model="nhn_peliculas.director">
+            <field name="name">Christopher Nolan</field>
+            <field name="fecha_nacimiento">1970-07-30</field>
+            <field name="nacionalidad">Británico</field>
+            <field name="premios">Oscar, BAFTA, Golden Globe</field>
+        </record>
+        
+   
+        <record id="pelicula_inception" model="nhn_peliculas.pelicula">
+            <field name="name">Inception</field>
+            <field name="anio">2010</field>
+            <field name="duracion">148</field>
+            <field name="sinopsis">Un ladrón que roba secretos del subconsciente</field>
+            <field name="director_id" ref="director_nolan"/>
+            <field name="actores_ids" eval="[(6, 0, [ref('actor_leonardo')])]"/>
+            <field name="generos_ids" eval="[(6, 0, [ref('genero_accion'), ref('genero_drama')])]"/>
+        </record>
     </data>
 </odoo>

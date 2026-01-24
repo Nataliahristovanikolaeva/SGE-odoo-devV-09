@@ -1,49 +1,49 @@
-# -*- coding: utf-8 -*-
-
 from odoo import models, fields, api
-from datetime import date
 
-class nhn_peliculas_pelicula(models.Model):
+class Pelicula(models.Model):
     _name = 'nhn_peliculas.pelicula'
     _description = 'Película'
+    
+    name = fields.Char(string='Título', required=True)
+    anio = fields.Integer(string='Año')
+    duracion = fields.Integer(string='Duración (minutos)')
+    sinopsis = fields.Text(string='Sinopsis')
+    imagen = fields.Binary(string='Poster')
+    
    
-
-    name = fields.Char(
-        string='Título',
-       
+    director_id = fields.Many2one(
+        comodel_name='nhn_peliculas.director',
+        string='Director',
+        required=True
     )
     
-    
-    fecha_estreno = fields.Date(
-        string='Fecha de estreno',
-       
+    actores_ids = fields.Many2many(
+        comodel_name='nhn_peliculas.actor',
+        relation='pelicula_actor_rel',
+        column1='pelicula_id',
+        column2='actor_id',
+        string='Actores Principales'
     )
     
-    duracion = fields.Integer(
-        string='Duración (minutos)',
-       
+    generos_ids = fields.Many2many(
+        comodel_name='nhn_peliculas.genero',
+        relation='pelicula_genero_rel',
+        column1='pelicula_id',
+        column2='genero_id',
+        string='Géneros'
     )
     
-    sinopsis = fields.Text(
-        string='Sinopsis',
-     
+    # Campo calculado
+    nombre_completo = fields.Char(
+        string='Película Completa',
+        compute='_compute_nombre_completo',
+        store=True
     )
     
-    
-    valoracion = fields.Selection([
-        ('1', '⭐ - Muy mala'),
-        ('2', '⭐⭐ - Mala'),
-        ('3', '⭐⭐⭐ - Regular'),
-        ('4', '⭐⭐⭐⭐ - Buena'),
-        ('5', '⭐⭐⭐⭐⭐ - Excelente'),
-    ], 
-    string='Valoración',
-    default='3',
-  
-    )
-    
-    imagen=fields.Image('Imagen de la película')
-    
-  
-    
- 
+    @api.depends('name', 'anio')
+    def _compute_nombre_completo(self):
+        for record in self:
+            if record.anio:
+                record.nombre_completo = f"{record.name} ({record.anio})"
+            else:
+                record.nombre_completo = record.name
