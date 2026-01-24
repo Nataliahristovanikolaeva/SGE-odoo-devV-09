@@ -11,7 +11,29 @@
             <field name="name">Drama</field>
             <field name="descripcion">Películas dramáticas con contenido emocional</field>
         </record>
+
+           
+        <record id="genero_comedia" model="nhn_peliculas.genero">
+            <field name="name">Comedia</field>
+            <field name="descripcion">Películas para reír y entretener</field>
+        </record>
+
+        <record id="genero_cienciaficcion" model="nhn_peliculas.genero">
+            <field name="name">Ciencia Ficción</field>
+            <field name="descripcion">Películas basadas en ciencia y tecnología futurista</field>
+        </record>
+
+        <record id="genero_terror" model="nhn_peliculas.genero">
+            <field name="name">Terror</field>
+            <field name="descripcion">Películas que buscan generar miedo o suspenso</field>
+        </record>
+
+        <record id="genero_romance" model="nhn_peliculas.genero">
+            <field name="name">Romance</field>
+            <field name="descripcion">Historias centradas en el amor y relaciones</field>
+        </record>
         
+        <!-- mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm -->
         
         <record id="actor_leonardo" model="nhn_peliculas.actor">
             <field name="name">Leonardo DiCaprio</field>
@@ -19,16 +41,97 @@
             <field name="nacionalidad">Estadounidense</field>
             <field name="biografia">Actor estadounidense ganador del Oscar</field>
         </record>
+
+        <record id="actor_morgan" model="nhn_peliculas.actor">
+            <field name="name">Morgan Freeman</field>
+            <field name="fecha_nacimiento">1937-06-01</field>
+            <field name="nacionalidad">Estadounidense</field>
+            <field name="biografia">Actor conocido por su voz profunda y papeles icónicos</field>
+        </record>
+
+        <record id="actor_scarlett" model="nhn_peliculas.actor">
+            <field name="name">Scarlett Johansson</field>
+            <field name="fecha_nacimiento">1984-11-22</field>
+            <field name="nacionalidad">Estadounidense</field>
+            <field name="biografia">Actriz famosa por papeles en películas de acción y drama</field>
+        </record>
+
+        <record id="actor_robert" model="nhn_peliculas.actor">
+            <field name="name">Robert Downey Jr.</field>
+            <field name="fecha_nacimiento">1965-04-04</field>
+            <field name="nacionalidad">Estadounidense</field>
+            <field name="biografia">Actor reconocido mundialmente por interpretar a Iron Man</field>
+        </record>
+
+        <record id="actor_emma" model="nhn_peliculas.actor">
+            <field name="name">Emma Stone</field>
+            <field name="fecha_nacimiento">1988-11-06</field>
+            <field name="nacionalidad">Estadounidense</field>
+            <field name="biografia">Ganadora del Oscar, conocida por comedias y dramas</field>
+        </record>
+
+        <record id="actor_chris" model="nhn_peliculas.actor">
+            <field name="name">Chris Hemsworth</field>
+            <field name="fecha_nacimiento">1983-08-11</field>
+            <field name="nacionalidad">Australiano</field>
+            <field name="biografia">Actor famoso por su papel de Thor en el Universo Marvel</field>
+        </record>
+
+        <record id="actor_margot" model="nhn_peliculas.actor">
+            <field name="name">Margot Robbie</field>
+            <field name="fecha_nacimiento">1990-07-02</field>
+            <field name="nacionalidad">Australiana</field>
+            <field name="biografia">Actriz conocida por películas de drama y acción</field>
+        </record>
+
+        <record id="actor_matthew" model="nhn_peliculas.actor">
+            <field name="name">Matthew McConaughey</field>
+            <field name="fecha_nacimiento">1969-11-04</field>
+            <field name="nacionalidad">Estadounidense</field>
+            <field name="biografia">Actor conocido por papeles dramáticos y de ciencia ficción</field>
+        </record>
+
+        <record id="actor_anne" model="nhn_peliculas.actor">
+            <field name="name">Anne Hathaway</field>
+            <field name="fecha_nacimiento">1982-11-12</field>
+            <field name="nacionalidad">Estadounidense</field>
+            <field name="biografia">Actriz ganadora del Oscar, conocida por comedia y drama</field>
+        </record>
+
         
        
+       <!-- mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm -->
         <record id="director_nolan" model="nhn_peliculas.director">
             <field name="name">Christopher Nolan</field>
             <field name="fecha_nacimiento">1970-07-30</field>
             <field name="nacionalidad">Británico</field>
             <field name="premios">Oscar, BAFTA, Golden Globe</field>
         </record>
+
+        <record id="director_spielberg" model="nhn_peliculas.director">
+            <field name="name">Steven Spielberg</field>
+            <field name="fecha_nacimiento">1946-12-18</field>
+            <field name="nacionalidad">Estadounidense</field>
+            <field name="premios">Oscar, Golden Globe, BAFTA</field>
+        </record>
+
+        <record id="director_scorsese" model="nhn_peliculas.director">
+            <field name="name">Martin Scorsese</field>
+            <field name="fecha_nacimiento">1942-11-17</field>
+            <field name="nacionalidad">Estadounidense</field>
+            <field name="premios">Oscar, BAFTA, Golden Globe</field>
+        </record>
+
+        <record id="director_cameron" model="nhn_peliculas.director">
+            <field name="name">James Cameron</field>
+            <field name="fecha_nacimiento">1954-08-16</field>
+            <field name="nacionalidad">Canadiense</field>
+            <field name="premios">Oscar, Golden Globe</field>
+        </record>
         
    
+
+        <!-- mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm -->
         <record id="pelicula_inception" model="nhn_peliculas.pelicula">
             <field name="name">Inception</field>
             <field name="anio">2010</field>
@@ -37,6 +140,56 @@
             <field name="director_id" ref="director_nolan"/>
             <field name="actores_ids" eval="[(6, 0, [ref('actor_leonardo')])]"/>
             <field name="generos_ids" eval="[(6, 0, [ref('genero_accion'), ref('genero_drama')])]"/>
+        </record>
+
+         <record id="pelicula_avengers" model="nhn_peliculas.pelicula">
+            <field name="name">Avengers: Endgame</field>
+            <field name="anio">2019</field>
+            <field name="duracion">181</field>
+            <field name="sinopsis">Los superhéroes se unen para derrotar a Thanos</field>
+            <field name="director_id" ref="director_cameron"/>
+            <field name="actores_ids" eval="[(6, 0, [ref('actor_robert'), ref('actor_chris')])]"/>
+            <field name="generos_ids" eval="[(6, 0, [ref('genero_accion'), ref('genero_cienciaficcion')])]"/>
+        </record>
+
+        <record id="pelicula_lalaland" model="nhn_peliculas.pelicula">
+            <field name="name">La La Land</field>
+            <field name="anio">2016</field>
+            <field name="duracion">128</field>
+            <field name="sinopsis">Historia de amor entre una actriz y un músico en Los Ángeles</field>
+            <field name="director_id" ref="director_scorsese"/>
+            <field name="actores_ids" eval="[(6, 0, [ref('actor_emma')])]"/>
+            <field name="generos_ids" eval="[(6, 0, [ref('genero_romance'), ref('genero_comedia')])]"/>
+        </record>
+
+        <record id="pelicula_jurassic" model="nhn_peliculas.pelicula">
+            <field name="name">Jurassic Park</field>
+            <field name="anio">1993</field>
+            <field name="duracion">127</field>
+            <field name="sinopsis">Parque temático con dinosaurios clonados se descontrola</field>
+            <field name="director_id" ref="director_spielberg"/>
+            <field name="actores_ids" eval="[(6, 0, [ref('actor_morgan')])]"/>
+            <field name="generos_ids" eval="[(6, 0, [ref('genero_accion'), ref('genero_cienciaficcion')])]"/>
+        </record>
+
+        <record id="pelicula_titanic" model="nhn_peliculas.pelicula">
+            <field name="name">Titanic</field>
+            <field name="anio">1997</field>
+            <field name="duracion">195</field>
+            <field name="sinopsis">Romance épico a bordo del barco Titanic</field>
+            <field name="director_id" ref="director_cameron"/>
+            <field name="actores_ids" eval="[(6, 0, [ref('actor_leonardo'), ref('actor_margot')])]"/>
+            <field name="generos_ids" eval="[(6, 0, [ref('genero_drama'), ref('genero_romance')])]"/>
+        </record>
+
+        <record id="pelicula_interior" model="nhn_peliculas.pelicula">
+            <field name="name">Interstellar</field>
+            <field name="anio">2014</field>
+            <field name="duracion">169</field>
+            <field name="sinopsis">Un viaje espacial para salvar la humanidad</field>
+            <field name="director_id" ref="director_nolan"/>
+            <field name="actores_ids" eval="[(6, 0, [ref('actor_matthew'), ref('actor_anne')])]"/>
+            <field name="generos_ids" eval="[(6, 0, [ref('genero_cienciaficcion'), ref('genero_drama')])]"/>
         </record>
     </data>
 </odoo>
