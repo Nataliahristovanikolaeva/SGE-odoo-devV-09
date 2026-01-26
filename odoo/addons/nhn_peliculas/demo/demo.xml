@@ -77,7 +77,7 @@
             <field name="biografia">Actor famoso por su papel de Thor en el Universo Marvel</field>
         </record>
 
-        <record id="actor_margot" model="nhn_peliculas.actor">
+        <record id="actor_margot" model="nhn_peliculas.actor"> 
             <field name="name">Margot Robbie</field>
             <field name="fecha_nacimiento">1990-07-02</field>
             <field name="nacionalidad">Australiana</field>
